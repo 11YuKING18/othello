@@ -322,6 +322,7 @@ export default function Home() {
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === turnColor
     ) {
+      newBoard[y][x] = turnColor;
       newBoard[y][x - 1] = turnColor;
       newBoard[y][x - 2] = turnColor;
       setTurnColor(2 / turnColor);
@@ -364,6 +365,7 @@ export default function Home() {
       board[y][x - 4] === 2 / turnColor &&
       board[y][x - 5] === turnColor
     ) {
+      newBoard[y][x] = turnColor;
       newBoard[y][x - 1] = turnColor;
       newBoard[y][x - 2] = turnColor;
       newBoard[y][x - 3] = turnColor;
