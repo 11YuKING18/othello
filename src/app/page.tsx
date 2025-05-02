@@ -30,14 +30,15 @@ export default function Home() {
       [-1, -1],
     ];
 
-    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x] === turnColor) {
+    if (board[y][x] === 0 && y - 1 >= 0 && board[y - 1][x] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      y - 2 >= 0 &&
       board[y - 1][x] === 2 / turnColor &&
       board[y - 2][x] === turnColor
     ) {
@@ -48,7 +49,9 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      y - 2 >= 0 &&
+      y - 3 >= 0 &&
       board[y - 1][x] === 2 / turnColor &&
       board[y - 2][x] === 2 / turnColor &&
       board[y - 3][x] === turnColor
@@ -61,7 +64,10 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      y - 2 >= 0 &&
+      y - 3 >= 0 &&
+      y - 4 >= 0 &&
       board[y - 1][x] === 2 / turnColor &&
       board[y - 2][x] === 2 / turnColor &&
       board[y - 3][x] === 2 / turnColor &&
@@ -76,7 +82,11 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      y - 2 >= 0 &&
+      y - 3 >= 0 &&
+      y - 4 >= 0 &&
+      y - 5 >= 0 &&
       board[y - 1][x] === 2 / turnColor &&
       board[y - 2][x] === 2 / turnColor &&
       board[y - 3][x] === 2 / turnColor &&
@@ -93,7 +103,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      y - 2 >= 0 &&
+      y - 3 >= 0 &&
+      y - 4 >= 0 &&
+      y - 5 >= 0 &&
+      y - 6 >= 0 &&
       board[y - 1][x] === 2 / turnColor &&
       board[y - 2][x] === 2 / turnColor &&
       board[y - 3][x] === 2 / turnColor &&
@@ -112,7 +127,13 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      y - 2 >= 0 &&
+      y - 3 >= 0 &&
+      y - 4 >= 0 &&
+      y - 5 >= 0 &&
+      y - 6 >= 0 &&
+      y - 7 >= 0 &&
       board[y - 1][x] === 2 / turnColor &&
       board[y - 2][x] === 2 / turnColor &&
       board[y - 3][x] === 2 / turnColor &&
@@ -131,14 +152,15 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y + 1][x] === turnColor) {
+    if (board[y][x] === 0 && y + 1 >= 0 && board[y + 1][x] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      y + 2 >= 0 &&
       board[y + 1][x] === 2 / turnColor &&
       board[y + 2][x] === turnColor
     ) {
@@ -149,7 +171,9 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      y + 2 >= 0 &&
+      y + 3 >= 0 &&
       board[y + 1][x] === 2 / turnColor &&
       board[y + 2][x] === 2 / turnColor &&
       board[y + 3][x] === turnColor
@@ -162,7 +186,10 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      y + 2 >= 0 &&
+      y + 3 >= 0 &&
+      y + 4 >= 0 &&
       board[y + 1][x] === 2 / turnColor &&
       board[y + 2][x] === 2 / turnColor &&
       board[y + 3][x] === 2 / turnColor &&
@@ -177,7 +204,11 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      y + 2 >= 0 &&
+      y + 3 >= 0 &&
+      y + 4 >= 0 &&
+      y + 5 >= 0 &&
       board[y + 1][x] === 2 / turnColor &&
       board[y + 2][x] === 2 / turnColor &&
       board[y + 3][x] === 2 / turnColor &&
@@ -194,7 +225,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      y + 2 >= 0 &&
+      y + 3 >= 0 &&
+      y + 4 >= 0 &&
+      y + 5 >= 0 &&
+      y + 6 >= 0 &&
       board[y + 1][x] === 2 / turnColor &&
       board[y + 2][x] === 2 / turnColor &&
       board[y + 3][x] === 2 / turnColor &&
@@ -213,7 +249,13 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      y + 2 >= 0 &&
+      y + 3 >= 0 &&
+      y + 4 >= 0 &&
+      y + 5 >= 0 &&
+      y + 6 >= 0 &&
+      y + 7 >= 0 &&
       board[y + 1][x] === 2 / turnColor &&
       board[y + 2][x] === 2 / turnColor &&
       board[y + 3][x] === 2 / turnColor &&
@@ -232,14 +274,15 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y][x + 1] === turnColor) {
+    if (board[y][x] === 0 && x + 1 >= 0 && board[y][x + 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x + 1 >= 0 &&
+      x + 2 >= 0 &&
       board[y][x + 1] === 2 / turnColor &&
       board[y][x + 2] === turnColor
     ) {
@@ -250,7 +293,9 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x + 1 >= 0 &&
+      x + 2 >= 0 &&
+      x + 3 >= 0 &&
       board[y][x + 1] === 2 / turnColor &&
       board[y][x + 2] === 2 / turnColor &&
       board[y][x + 3] === turnColor
@@ -263,7 +308,10 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x + 1 >= 0 &&
+      x + 2 >= 0 &&
+      x + 3 >= 0 &&
+      x + 4 >= 0 &&
       board[y][x + 1] === 2 / turnColor &&
       board[y][x + 2] === 2 / turnColor &&
       board[y][x + 3] === 2 / turnColor &&
@@ -278,7 +326,11 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x + 1 >= 0 &&
+      x + 2 >= 0 &&
+      x + 3 >= 0 &&
+      x + 4 >= 0 &&
+      x + 5 >= 0 &&
       board[y][x + 1] === 2 / turnColor &&
       board[y][x + 2] === 2 / turnColor &&
       board[y][x + 3] === 2 / turnColor &&
@@ -295,7 +347,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x + 1 >= 0 &&
+      x + 2 >= 0 &&
+      x + 3 >= 0 &&
+      x + 4 >= 0 &&
+      x + 5 >= 0 &&
+      x + 6 >= 0 &&
       board[y][x + 1] === 2 / turnColor &&
       board[y][x + 2] === 2 / turnColor &&
       board[y][x + 3] === 2 / turnColor &&
@@ -314,7 +371,13 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x + 1 >= 0 &&
+      x + 2 >= 0 &&
+      x + 3 >= 0 &&
+      x + 4 >= 0 &&
+      x + 5 >= 0 &&
+      x + 6 >= 0 &&
+      x + 7 >= 0 &&
       board[y][x + 1] === 2 / turnColor &&
       board[y][x + 2] === 2 / turnColor &&
       board[y][x + 3] === 2 / turnColor &&
@@ -333,14 +396,15 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y][x - 1] === turnColor) {
+    if (board[y][x] === 0 && x - 1 >= 0 && board[y][x - 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x - 1 >= 0 &&
+      x - 2 >= 0 &&
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === turnColor
     ) {
@@ -351,7 +415,9 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x - 1 >= 0 &&
+      x - 2 >= 0 &&
+      x - 3 >= 0 &&
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === 2 / turnColor &&
       board[y][x - 3] === turnColor
@@ -364,7 +430,10 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x - 1 >= 0 &&
+      x - 2 >= 0 &&
+      x - 3 >= 0 &&
+      x - 4 >= 0 &&
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === 2 / turnColor &&
       board[y][x - 3] === 2 / turnColor &&
@@ -379,7 +448,11 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x - 1 >= 0 &&
+      x - 2 >= 0 &&
+      x - 3 >= 0 &&
+      x - 4 >= 0 &&
+      x - 5 >= 0 &&
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === 2 / turnColor &&
       board[y][x - 3] === 2 / turnColor &&
@@ -396,7 +469,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      x - 1 >= 0 &&
+      x - 2 >= 0 &&
+      x - 3 >= 0 &&
+      x - 4 >= 0 &&
+      x - 5 >= 0 &&
+      x - 6 >= 0 &&
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === 2 / turnColor &&
       board[y][x - 3] === 2 / turnColor &&
@@ -415,7 +493,13 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      x - 1 >= 0 &&
+      x - 2 >= 0 &&
+      x - 3 >= 0 &&
+      x - 4 >= 0 &&
+      x - 5 >= 0 &&
+      x - 6 >= 0 &&
+      x - 7 >= 0 &&
       board[y][x - 1] === 2 / turnColor &&
       board[y][x - 2] === 2 / turnColor &&
       board[y][x - 3] === 2 / turnColor &&
@@ -434,14 +518,17 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x - 1] === turnColor) {
+    if (board[y][x] === 0 && y - 1 >= 0 && x - 1 >= 0 && board[y - 1][x - 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x - 1 >= 0 &&
+      y - 2 >= 0 &&
+      x - 2 >= 0 &&
       board[y - 1][x - 1] === 2 / turnColor &&
       board[y - 2][x - 2] === turnColor
     ) {
@@ -452,7 +539,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x - 1 >= 0 &&
+      y - 2 >= 0 &&
+      x - 2 >= 0 &&
+      y - 3 >= 0 &&
+      x - 3 >= 0 &&
       board[y - 1][x - 1] === 2 / turnColor &&
       board[y - 2][x - 2] === 2 / turnColor &&
       board[y - 3][x - 3] === turnColor
@@ -465,7 +557,14 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x - 1 >= 0 &&
+      y - 2 >= 0 &&
+      x - 2 >= 0 &&
+      y - 3 >= 0 &&
+      x - 3 >= 0 &&
+      y - 4 >= 0 &&
+      x - 4 >= 0 &&
       board[y - 1][x - 1] === 2 / turnColor &&
       board[y - 2][x - 2] === 2 / turnColor &&
       board[y - 3][x - 3] === 2 / turnColor &&
@@ -480,7 +579,16 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x - 1 >= 0 &&
+      y - 2 >= 0 &&
+      x - 2 >= 0 &&
+      y - 3 >= 0 &&
+      x - 3 >= 0 &&
+      y - 4 >= 0 &&
+      x - 4 >= 0 &&
+      y - 5 >= 0 &&
+      x - 5 >= 0 &&
       board[y - 1][x - 1] === 2 / turnColor &&
       board[y - 2][x - 2] === 2 / turnColor &&
       board[y - 3][x - 3] === 2 / turnColor &&
@@ -497,7 +605,18 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x - 1 >= 0 &&
+      y - 2 >= 0 &&
+      x - 2 >= 0 &&
+      y - 3 >= 0 &&
+      x - 3 >= 0 &&
+      y - 4 >= 0 &&
+      x - 4 >= 0 &&
+      y - 5 >= 0 &&
+      x - 5 >= 0 &&
+      y - 6 >= 0 &&
+      x - 6 >= 0 &&
       board[y - 1][x - 1] === 2 / turnColor &&
       board[y - 2][x - 2] === 2 / turnColor &&
       board[y - 3][x - 3] === 2 / turnColor &&
@@ -516,7 +635,20 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x - 1 >= 0 &&
+      y - 2 >= 0 &&
+      x - 2 >= 0 &&
+      y - 3 >= 0 &&
+      x - 3 >= 0 &&
+      y - 4 >= 0 &&
+      x - 4 >= 0 &&
+      y - 5 >= 0 &&
+      x - 5 >= 0 &&
+      y - 6 >= 0 &&
+      x - 6 >= 0 &&
+      y - 7 >= 0 &&
+      x - 7 >= 0 &&
       board[y - 1][x - 1] === 2 / turnColor &&
       board[y - 2][x - 2] === 2 / turnColor &&
       board[y - 3][x - 3] === 2 / turnColor &&
@@ -535,14 +667,17 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x + 1] === turnColor) {
+    if (board[y][x] === 0 && y - 1 >= 0 && x + 1 >= 0 && board[y - 1][x + 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === turnColor
     ) {
@@ -553,7 +688,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === turnColor
@@ -566,7 +706,14 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -581,7 +728,16 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
+      y - 5 >= 0 &&
+      x + 5 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -598,7 +754,18 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
+      y - 5 >= 0 &&
+      x + 5 >= 0 &&
+      y - 6 >= 0 &&
+      x + 6 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -617,7 +784,20 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
+      y - 5 >= 0 &&
+      x + 5 >= 0 &&
+      y - 6 >= 0 &&
+      x + 6 >= 0 &&
+      y - 7 >= 0 &&
+      x + 7 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -636,14 +816,17 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y + 1][x - 1] === turnColor) {
+    if (board[y][x] === 0 && y + 1 >= 0 && x - 1 >= 0 && board[y + 1][x - 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x - 1 >= 0 &&
+      y + 2 >= 0 &&
+      x - 2 >= 0 &&
       board[y + 1][x - 1] === 2 / turnColor &&
       board[y + 2][x - 2] === turnColor
     ) {
@@ -654,7 +837,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x - 1 >= 0 &&
+      y + 2 >= 0 &&
+      x - 2 >= 0 &&
+      y + 3 >= 0 &&
+      x - 3 >= 0 &&
       board[y + 1][x - 1] === 2 / turnColor &&
       board[y + 2][x - 2] === 2 / turnColor &&
       board[y + 3][x - 3] === turnColor
@@ -667,7 +855,14 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x - 1 >= 0 &&
+      y + 2 >= 0 &&
+      x - 2 >= 0 &&
+      y + 3 >= 0 &&
+      x - 3 >= 0 &&
+      y + 4 >= 0 &&
+      x - 4 >= 0 &&
       board[y + 1][x - 1] === 2 / turnColor &&
       board[y + 2][x - 2] === 2 / turnColor &&
       board[y + 3][x - 3] === 2 / turnColor &&
@@ -682,7 +877,16 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x - 1 >= 0 &&
+      y + 2 >= 0 &&
+      x - 2 >= 0 &&
+      y + 3 >= 0 &&
+      x - 3 >= 0 &&
+      y + 4 >= 0 &&
+      x - 4 >= 0 &&
+      y + 5 >= 0 &&
+      x - 5 >= 0 &&
       board[y + 1][x - 1] === 2 / turnColor &&
       board[y + 2][x - 2] === 2 / turnColor &&
       board[y + 3][x - 3] === 2 / turnColor &&
@@ -699,7 +903,18 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x - 1 >= 0 &&
+      y + 2 >= 0 &&
+      x - 2 >= 0 &&
+      y + 3 >= 0 &&
+      x - 3 >= 0 &&
+      y + 4 >= 0 &&
+      x - 4 >= 0 &&
+      y + 5 >= 0 &&
+      x - 5 >= 0 &&
+      y + 6 >= 0 &&
+      x - 6 >= 0 &&
       board[y + 1][x - 1] === 2 / turnColor &&
       board[y + 2][x - 2] === 2 / turnColor &&
       board[y + 3][x - 3] === 2 / turnColor &&
@@ -718,7 +933,20 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x - 1 >= 0 &&
+      y + 2 >= 0 &&
+      x - 2 >= 0 &&
+      y + 3 >= 0 &&
+      x - 3 >= 0 &&
+      y + 4 >= 0 &&
+      x - 4 >= 0 &&
+      y + 5 >= 0 &&
+      x - 5 >= 0 &&
+      y + 6 >= 0 &&
+      x - 6 >= 0 &&
+      y + 7 >= 0 &&
+      x - 7 >= 0 &&
       board[y + 1][x - 1] === 2 / turnColor &&
       board[y + 2][x - 2] === 2 / turnColor &&
       board[y + 3][x - 3] === 2 / turnColor &&
@@ -737,14 +965,17 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x + 1] === turnColor) {
+    if (board[y][x] === 0 && y - 1 >= 0 && x + 1 >= 0 && board[y - 1][x + 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === turnColor
     ) {
@@ -755,7 +986,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === turnColor
@@ -768,7 +1004,14 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -783,7 +1026,16 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
+      y - 5 >= 0 &&
+      x + 5 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -800,7 +1052,18 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
+      y - 5 >= 0 &&
+      x + 5 >= 0 &&
+      y - 6 >= 0 &&
+      x + 6 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -819,7 +1082,20 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y - 1] !== undefined &&
+      y - 1 >= 0 &&
+      x + 1 >= 0 &&
+      y - 2 >= 0 &&
+      x + 2 >= 0 &&
+      y - 3 >= 0 &&
+      x + 3 >= 0 &&
+      y - 4 >= 0 &&
+      x + 4 >= 0 &&
+      y - 5 >= 0 &&
+      x + 5 >= 0 &&
+      y - 6 >= 0 &&
+      x + 6 >= 0 &&
+      y - 7 >= 0 &&
+      x + 7 >= 0 &&
       board[y - 1][x + 1] === 2 / turnColor &&
       board[y - 2][x + 2] === 2 / turnColor &&
       board[y - 3][x + 3] === 2 / turnColor &&
@@ -838,14 +1114,17 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
-    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y + 1][x + 1] === turnColor) {
+    if (board[y][x] === 0 && y + 1 >= 0 && x + 1 >= 0 && board[y + 1][x + 1] === turnColor) {
       newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x + 1 >= 0 &&
+      y + 2 >= 0 &&
+      x + 2 >= 0 &&
       board[y + 1][x + 1] === 2 / turnColor &&
       board[y + 2][x + 2] === turnColor
     ) {
@@ -856,7 +1135,12 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x + 1 >= 0 &&
+      y + 2 >= 0 &&
+      x + 2 >= 0 &&
+      y + 3 >= 0 &&
+      x + 3 >= 0 &&
       board[y + 1][x + 1] === 2 / turnColor &&
       board[y + 2][x + 2] === 2 / turnColor &&
       board[y + 3][x + 3] === turnColor
@@ -869,7 +1153,14 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x + 1 >= 0 &&
+      y + 2 >= 0 &&
+      x + 2 >= 0 &&
+      y + 3 >= 0 &&
+      x + 3 >= 0 &&
+      y + 4 >= 0 &&
+      x + 4 >= 0 &&
       board[y + 1][x + 1] === 2 / turnColor &&
       board[y + 2][x + 2] === 2 / turnColor &&
       board[y + 3][x + 3] === 2 / turnColor &&
@@ -884,7 +1175,16 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x + 1 >= 0 &&
+      y + 2 >= 0 &&
+      x + 2 >= 0 &&
+      y + 3 >= 0 &&
+      x + 3 >= 0 &&
+      y + 4 >= 0 &&
+      x + 4 >= 0 &&
+      y + 5 >= 0 &&
+      x + 5 >= 0 &&
       board[y + 1][x + 1] === 2 / turnColor &&
       board[y + 2][x + 2] === 2 / turnColor &&
       board[y + 3][x + 3] === 2 / turnColor &&
@@ -901,7 +1201,18 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x + 1 >= 0 &&
+      y + 2 >= 0 &&
+      x + 2 >= 0 &&
+      y + 3 >= 0 &&
+      x + 3 >= 0 &&
+      y + 4 >= 0 &&
+      x + 4 >= 0 &&
+      y + 5 >= 0 &&
+      x + 5 >= 0 &&
+      y + 6 >= 0 &&
+      x + 6 >= 0 &&
       board[y + 1][x + 1] === 2 / turnColor &&
       board[y + 2][x + 2] === 2 / turnColor &&
       board[y + 3][x + 3] === 2 / turnColor &&
@@ -920,7 +1231,20 @@ export default function Home() {
 
     if (
       board[y][x] === 0 &&
-      board[y + 1] !== undefined &&
+      y + 1 >= 0 &&
+      x + 1 >= 0 &&
+      y + 2 >= 0 &&
+      x + 2 >= 0 &&
+      y + 3 >= 0 &&
+      x + 3 >= 0 &&
+      y + 4 >= 0 &&
+      x + 4 >= 0 &&
+      y + 5 >= 0 &&
+      x + 5 >= 0 &&
+      y + 6 >= 0 &&
+      x + 6 >= 0 &&
+      y + 7 >= 0 &&
+      x + 7 >= 0 &&
       board[y + 1][x + 1] === 2 / turnColor &&
       board[y + 2][x + 2] === 2 / turnColor &&
       board[y + 3][x + 3] === 2 / turnColor &&
