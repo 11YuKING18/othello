@@ -30,6 +30,11 @@ export default function Home() {
       [-1, -1],
     ];
 
+    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y - 1] !== undefined &&
@@ -125,6 +130,12 @@ export default function Home() {
       newBoard[y - 6][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
+
+    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y + 1][x] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y + 1] !== undefined &&
@@ -218,6 +229,11 @@ export default function Home() {
       newBoard[y + 4][x] = turnColor;
       newBoard[y + 5][x] = turnColor;
       newBoard[y + 6][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y][x + 1] === turnColor) {
+      newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
@@ -317,6 +333,11 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
+    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y][x - 1] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y + 1] !== undefined &&
@@ -325,7 +346,6 @@ export default function Home() {
     ) {
       newBoard[y][x] = turnColor;
       newBoard[y][x - 1] = turnColor;
-      newBoard[y][x - 2] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
@@ -411,6 +431,11 @@ export default function Home() {
       newBoard[y][x - 4] = turnColor;
       newBoard[y][x - 5] = turnColor;
       newBoard[y][x - 6] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
+    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x - 1] === turnColor) {
+      newBoard[y][x] = turnColor;
       setTurnColor(2 / turnColor);
     }
 
@@ -510,6 +535,11 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
+    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x + 1] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y - 1] !== undefined &&
@@ -605,6 +635,12 @@ export default function Home() {
       newBoard[y - 6][x + 6] = turnColor;
       setTurnColor(2 / turnColor);
     }
+
+    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y + 1][x - 1] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y + 1] !== undefined &&
@@ -701,6 +737,11 @@ export default function Home() {
       setTurnColor(2 / turnColor);
     }
 
+    if (board[y][x] === 0 && board[y - 1] !== undefined && board[y - 1][x + 1] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y - 1] !== undefined &&
@@ -796,6 +837,12 @@ export default function Home() {
       newBoard[y - 6][x + 6] = turnColor;
       setTurnColor(2 / turnColor);
     }
+
+    if (board[y][x] === 0 && board[y + 1] !== undefined && board[y + 1][x + 1] === turnColor) {
+      newBoard[y][x] = turnColor;
+      setTurnColor(2 / turnColor);
+    }
+
     if (
       board[y][x] === 0 &&
       board[y + 1] !== undefined &&
