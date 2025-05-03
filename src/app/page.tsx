@@ -16,9 +16,11 @@ export default function Home() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
   ]);
+
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
+
     const directions = [
       [0, -1],
       [1, -1],
@@ -795,6 +797,7 @@ export default function Home() {
   };
   return (
     <div className={styles.container}>
+      <h2>現在のターン：{turnColor === 1 ? '黒' : '白'}</h2>
       <div className={styles.board}>
         {board.map((row, y) =>
           row.map((color, x) => (
