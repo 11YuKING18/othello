@@ -3,6 +3,18 @@
 import { useState } from 'react';
 import styles from './page.module.css';
 
+function countStones(board: number[][]) {
+  let black = 0,
+    white = 0;
+  for (let y = 0; y < board.length; y++) {
+    for (let x = 0; x < board[y].length; x++) {
+      if (board[y][x] === 1) black++;
+      if (board[y][x] === 2) white++;
+    }
+  }
+  return { black, white };
+}
+
 export default function Home() {
   const [turnColor, setTurnColor] = useState(1);
 
@@ -16,6 +28,14 @@ export default function Home() {
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
   ]);
+
+  function placeStone(y: number, x: number, color: 1 | 2) {
+    const newBoard = board.map((row) => [...row]);
+    newBoard[y][x] = color;
+    setBoard(newBoard);
+  }
+
+  const scores = countStones(board);
 
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
@@ -107,13 +127,13 @@ export default function Home() {
 
     if (board[y][x] === 0) {
       let n = 1;
-      if (board[y - n][x - n] !== undefined && board[y - n][x - n] === 2 / turnColor) {
+      if (board[y - n] !== undefined && board[y - n][x - n] === 2 / turnColor) {
         n++;
-        while (board[y - n][x - n] !== undefined && board[y - n][x - n] === 2 / turnColor) {
+        while (board[y - n] !== undefined && board[y - n][x - n] === 2 / turnColor) {
           n++;
         }
 
-        if (board[y - n][x - n] !== undefined && board[y - n][x - n] === turnColor) {
+        if (board[y - n] !== undefined && board[y - n][x - n] === turnColor) {
           for (let k = 1; k < n; k++) {
             newBoard[y - k][x - k] = turnColor;
           }
@@ -125,13 +145,13 @@ export default function Home() {
 
     if (board[y][x] === 0) {
       let n = 1;
-      if (board[y - n][x + n] !== undefined && board[y - n][x + n] === 2 / turnColor) {
+      if (board[y - n] !== undefined && board[y - n][x + n] === 2 / turnColor) {
         n++;
-        while (board[y - n][x + n] !== undefined && board[y - n][x + n] === 2 / turnColor) {
+        while (board[y - n] !== undefined && board[y - n][x + n] === 2 / turnColor) {
           n++;
         }
 
-        if (board[y - n][x + n] !== undefined && board[y - n][x + n] === turnColor) {
+        if (board[y - n] !== undefined && board[y - n][x + n] === turnColor) {
           for (let k = 1; k < n; k++) {
             newBoard[y - k][x + k] = turnColor;
           }
@@ -143,13 +163,13 @@ export default function Home() {
 
     if (board[y][x] === 0) {
       let n = 1;
-      if (board[y + n][x - n] !== undefined && board[y + n][x - n] === 2 / turnColor) {
+      if (board[y + n] !== undefined && board[y + n][x - n] === 2 / turnColor) {
         n++;
-        while (board[y + n][x - n] !== undefined && board[y + n][x - n] === 2 / turnColor) {
+        while (board[y + n] !== undefined && board[y + n][x - n] === 2 / turnColor) {
           n++;
         }
 
-        if (board[y + n][x - n] !== undefined && board[y + n][x - n] === turnColor) {
+        if (board[y + n] !== undefined && board[y + n][x - n] === turnColor) {
           for (let k = 1; k < n; k++) {
             newBoard[y + k][x - k] = turnColor;
           }
@@ -161,13 +181,13 @@ export default function Home() {
 
     if (board[y][x] === 0) {
       let n = 1;
-      if (board[y + n][x + n] !== undefined && board[y + n][x + n] === 2 / turnColor) {
+      if (board[y + n] !== undefined && board[y + n][x + n] === 2 / turnColor) {
         n++;
-        while (board[y + n][x + n] !== undefined && board[y + n][x + n] === 2 / turnColor) {
+        while (board[y + n] !== undefined && board[y + n][x + n] === 2 / turnColor) {
           n++;
         }
 
-        if (board[y + n][x + n] !== undefined && board[y + n][x + n] === turnColor) {
+        if (board[y + n] !== undefined && board[y + n][x + n] === turnColor) {
           for (let k = 1; k < n; k++) {
             newBoard[y + k][x + k] = turnColor;
           }
@@ -182,6 +202,9 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h2>現在のターン：{turnColor === 1 ? '黒' : '白'}</h2>
+      <h2>
+        黒: {scores.black}点, 白: {scores.white}点
+      </h2>
       <div className={styles.board}>
         {board.map((row, y) =>
           row.map((color, x) => (
