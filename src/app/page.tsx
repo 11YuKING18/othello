@@ -32,765 +32,149 @@ export default function Home() {
       [-1, -1],
     ];
 
-    if (
-      board[y - 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x] === 2 / turnColor &&
-      board[y - 2][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y - n] !== undefined && board[y - n][x] === 2 / turnColor) {
+        //枠外じゃないかつ置こうとしてるマスの一つとなりが相手の色だったら
+        n++; //そのさらに上のマスを調べる
+        while (board[y - n] !== undefined && board[y - n][x] === 2 / turnColor) {
+          n++;
+          //枠外または相手の石になるまで調べ続ける
+        }
+        if (board[y - n] !== undefined && board[y - n][x] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y - k][x] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y - 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x] === 2 / turnColor &&
-      board[y - 2][x] === 2 / turnColor &&
-      board[y - 3][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x] = turnColor;
-      newBoard[y - 2][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y + n] !== undefined && board[y + n][x] === 2 / turnColor) {
+        n++;
+        while (board[y + n] !== undefined && board[y + n][x] === 2 / turnColor) {
+          n++;
+        }
+
+        if (board[y + n] !== undefined && board[y + n][x] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y + k][x] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y - 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x] === 2 / turnColor &&
-      board[y - 2][x] === 2 / turnColor &&
-      board[y - 3][x] === 2 / turnColor &&
-      board[y - 4][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x] = turnColor;
-      newBoard[y - 2][x] = turnColor;
-      newBoard[y - 3][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y - n] !== undefined && board[y][x + n] === 2 / turnColor) {
+        n++;
+        while (board[y - n] !== undefined && board[y][x + n] === 2 / turnColor) {
+          n++;
+        }
+
+        if (board[y - n] !== undefined && board[y][x + n] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y][x + k] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y - 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x] === 2 / turnColor &&
-      board[y - 2][x] === 2 / turnColor &&
-      board[y - 3][x] === 2 / turnColor &&
-      board[y - 4][x] === 2 / turnColor &&
-      board[y - 5][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x] = turnColor;
-      newBoard[y - 2][x] = turnColor;
-      newBoard[y - 3][x] = turnColor;
-      newBoard[y - 4][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y - n] !== undefined && board[y][x - n] === 2 / turnColor) {
+        n++;
+        while (board[y - n] !== undefined && board[y][x - n] === 2 / turnColor) {
+          n++;
+        }
+
+        if (board[y - n] !== undefined && board[y][x - n] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y][x - k] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y - 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x] === 2 / turnColor &&
-      board[y - 2][x] === 2 / turnColor &&
-      board[y - 3][x] === 2 / turnColor &&
-      board[y - 4][x] === 2 / turnColor &&
-      board[y - 5][x] === 2 / turnColor &&
-      board[y - 6][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x] = turnColor;
-      newBoard[y - 2][x] = turnColor;
-      newBoard[y - 3][x] = turnColor;
-      newBoard[y - 4][x] = turnColor;
-      newBoard[y - 5][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y - n][x - n] !== undefined && board[y - n][x - n] === 2 / turnColor) {
+        n++;
+        while (board[y - n][x - n] !== undefined && board[y - n][x - n] === 2 / turnColor) {
+          n++;
+        }
+
+        if (board[y - n][x - n] !== undefined && board[y - n][x - n] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y - k][x - k] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y - 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x] === 2 / turnColor &&
-      board[y - 2][x] === 2 / turnColor &&
-      board[y - 3][x] === 2 / turnColor &&
-      board[y - 4][x] === 2 / turnColor &&
-      board[y - 5][x] === 2 / turnColor &&
-      board[y - 6][x] === 2 / turnColor &&
-      board[y - 7][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x] = turnColor;
-      newBoard[y - 2][x] = turnColor;
-      newBoard[y - 3][x] = turnColor;
-      newBoard[y - 4][x] = turnColor;
-      newBoard[y - 5][x] = turnColor;
-      newBoard[y - 6][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y - n][x + n] !== undefined && board[y - n][x + n] === 2 / turnColor) {
+        n++;
+        while (board[y - n][x + n] !== undefined && board[y - n][x + n] === 2 / turnColor) {
+          n++;
+        }
+
+        if (board[y - n][x + n] !== undefined && board[y - n][x + n] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y - k][x + k] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y + 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x] === 2 / turnColor &&
-      board[y + 2][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x] = turnColor;
-      setTurnColor(2 / turnColor);
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y + n][x - n] !== undefined && board[y + n][x - n] === 2 / turnColor) {
+        n++;
+        while (board[y + n][x - n] !== undefined && board[y + n][x - n] === 2 / turnColor) {
+          n++;
+        }
+
+        if (board[y + n][x - n] !== undefined && board[y + n][x - n] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y + k][x - k] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
-    if (
-      board[y + 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x] === 2 / turnColor &&
-      board[y + 2][x] === 2 / turnColor &&
-      board[y + 3][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x] = turnColor;
-      newBoard[y + 2][x] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
+    if (board[y][x] === 0) {
+      let n = 1;
+      if (board[y + n][x + n] !== undefined && board[y + n][x + n] === 2 / turnColor) {
+        n++;
+        while (board[y + n][x + n] !== undefined && board[y + n][x + n] === 2 / turnColor) {
+          n++;
+        }
 
-    if (
-      board[y + 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x] === 2 / turnColor &&
-      board[y + 2][x] === 2 / turnColor &&
-      board[y + 3][x] === 2 / turnColor &&
-      board[y + 4][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x] = turnColor;
-      newBoard[y + 2][x] = turnColor;
-      newBoard[y + 3][x] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x] === 2 / turnColor &&
-      board[y + 2][x] === 2 / turnColor &&
-      board[y + 3][x] === 2 / turnColor &&
-      board[y + 4][x] === 2 / turnColor &&
-      board[y + 5][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x] = turnColor;
-      newBoard[y + 2][x] = turnColor;
-      newBoard[y + 3][x] = turnColor;
-      newBoard[y + 4][x] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x] === 2 / turnColor &&
-      board[y + 2][x] === 2 / turnColor &&
-      board[y + 3][x] === 2 / turnColor &&
-      board[y + 4][x] === 2 / turnColor &&
-      board[y + 5][x] === 2 / turnColor &&
-      board[y + 6][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x] = turnColor;
-      newBoard[y + 2][x] = turnColor;
-      newBoard[y + 3][x] = turnColor;
-      newBoard[y + 4][x] = turnColor;
-      newBoard[y + 5][x] = turnColor;
-    }
-
-    if (
-      board[y + 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x] === 2 / turnColor &&
-      board[y + 2][x] === 2 / turnColor &&
-      board[y + 3][x] === 2 / turnColor &&
-      board[y + 4][x] === 2 / turnColor &&
-      board[y + 5][x] === 2 / turnColor &&
-      board[y + 6][x] === 2 / turnColor &&
-      board[y + 7][x] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x] = turnColor;
-      newBoard[y + 2][x] = turnColor;
-      newBoard[y + 3][x] = turnColor;
-      newBoard[y + 4][x] = turnColor;
-      newBoard[y + 5][x] = turnColor;
-      newBoard[y + 6][x] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x + 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x + 1] === 2 / turnColor &&
-      board[y][x + 2] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x + 1] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x + 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x + 1] === 2 / turnColor &&
-      board[y][x + 2] === 2 / turnColor &&
-      board[y][x + 3] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x + 1] = turnColor;
-      newBoard[y][x + 2] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x + 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x + 1] === 2 / turnColor &&
-      board[y][x + 2] === 2 / turnColor &&
-      board[y][x + 3] === 2 / turnColor &&
-      board[y][x + 4] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x + 1] = turnColor;
-      newBoard[y][x + 2] = turnColor;
-      newBoard[y][x + 3] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x + 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x + 1] === 2 / turnColor &&
-      board[y][x + 2] === 2 / turnColor &&
-      board[y][x + 3] === 2 / turnColor &&
-      board[y][x + 4] === 2 / turnColor &&
-      board[y][x + 5] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x + 1] = turnColor;
-      newBoard[y][x + 2] = turnColor;
-      newBoard[y][x + 3] = turnColor;
-      newBoard[y][x + 4] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x + 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x + 1] === 2 / turnColor &&
-      board[y][x + 2] === 2 / turnColor &&
-      board[y][x + 3] === 2 / turnColor &&
-      board[y][x + 4] === 2 / turnColor &&
-      board[y][x + 5] === 2 / turnColor &&
-      board[y][x + 6] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x + 1] = turnColor;
-      newBoard[y][x + 2] = turnColor;
-      newBoard[y][x + 3] = turnColor;
-      newBoard[y][x + 4] = turnColor;
-      newBoard[y][x + 5] = turnColor;
-    }
-
-    if (
-      board[x + 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x + 1] === 2 / turnColor &&
-      board[y][x + 2] === 2 / turnColor &&
-      board[y][x + 3] === 2 / turnColor &&
-      board[y][x + 4] === 2 / turnColor &&
-      board[y][x + 5] === 2 / turnColor &&
-      board[y][x + 6] === 2 / turnColor &&
-      board[y][x + 7] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x + 1] = turnColor;
-      newBoard[y][x + 2] = turnColor;
-      newBoard[y][x + 3] = turnColor;
-      newBoard[y][x + 4] = turnColor;
-      newBoard[y][x + 5] = turnColor;
-      newBoard[y][x + 6] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x - 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x - 1] === 2 / turnColor &&
-      board[y][x - 2] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x - 1] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x - 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x - 1] === 2 / turnColor &&
-      board[y][x - 2] === 2 / turnColor &&
-      board[y][x - 3] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x - 1] = turnColor;
-      newBoard[y][x - 2] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x - 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x - 1] === 2 / turnColor &&
-      board[y][x - 2] === 2 / turnColor &&
-      board[y][x - 3] === 2 / turnColor &&
-      board[y][x - 4] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x - 1] = turnColor;
-      newBoard[y][x - 2] = turnColor;
-      newBoard[y][x - 3] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x - 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x - 1] === 2 / turnColor &&
-      board[y][x - 2] === 2 / turnColor &&
-      board[y][x - 3] === 2 / turnColor &&
-      board[y][x - 4] === 2 / turnColor &&
-      board[y][x - 5] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x - 1] = turnColor;
-      newBoard[y][x - 2] = turnColor;
-      newBoard[y][x - 3] = turnColor;
-      newBoard[y][x - 4] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[x - 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x - 1] === 2 / turnColor &&
-      board[y][x - 2] === 2 / turnColor &&
-      board[y][x - 3] === 2 / turnColor &&
-      board[y][x - 4] === 2 / turnColor &&
-      board[y][x - 5] === 2 / turnColor &&
-      board[y][x - 6] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x - 1] = turnColor;
-      newBoard[y][x - 2] = turnColor;
-      newBoard[y][x - 3] = turnColor;
-      newBoard[y][x - 4] = turnColor;
-      newBoard[y][x - 5] = turnColor;
-    }
-
-    if (
-      board[x - 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x - 1] === 2 / turnColor &&
-      board[y][x - 2] === 2 / turnColor &&
-      board[y][x - 3] === 2 / turnColor &&
-      board[y][x - 4] === 2 / turnColor &&
-      board[y][x - 5] === 2 / turnColor &&
-      board[y][x - 6] === 2 / turnColor &&
-      board[y][x - 7] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y][x - 1] = turnColor;
-      newBoard[y][x - 2] = turnColor;
-      newBoard[y][x - 3] = turnColor;
-      newBoard[y][x - 4] = turnColor;
-      newBoard[y][x - 5] = turnColor;
-      newBoard[y][x - 6] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x - 1] === 2 / turnColor &&
-      board[y - 2][x - 2] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x - 1] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x - 1] === 2 / turnColor &&
-      board[y - 2][x - 2] === 2 / turnColor &&
-      board[y - 3][x - 3] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x - 1] = turnColor;
-      newBoard[y - 2][x - 2] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x - 1] === 2 / turnColor &&
-      board[y - 2][x - 2] === 2 / turnColor &&
-      board[y - 3][x - 3] === 2 / turnColor &&
-      board[y - 4][x - 4] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x - 1] = turnColor;
-      newBoard[y - 2][x - 2] = turnColor;
-      newBoard[y - 3][x - 3] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x - 1] === 2 / turnColor &&
-      board[y - 2][x - 2] === 2 / turnColor &&
-      board[y - 3][x - 3] === 2 / turnColor &&
-      board[y - 4][x - 4] === 2 / turnColor &&
-      board[y - 5][x - 5] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x - 1] = turnColor;
-      newBoard[y - 2][x - 2] = turnColor;
-      newBoard[y - 3][x - 3] = turnColor;
-      newBoard[y - 4][x - 4] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x - 1] === 2 / turnColor &&
-      board[y - 2][x - 2] === 2 / turnColor &&
-      board[y - 3][x - 3] === 2 / turnColor &&
-      board[y - 4][x - 4] === 2 / turnColor &&
-      board[y - 5][x - 5] === 2 / turnColor &&
-      board[y - 6][x - 6] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x - 1] = turnColor;
-      newBoard[y - 2][x - 2] = turnColor;
-      newBoard[y - 3][x - 3] = turnColor;
-      newBoard[y - 4][x - 4] = turnColor;
-      newBoard[y - 5][x - 5] = turnColor;
-    }
-
-    if (
-      board[y - 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x - 1] === 2 / turnColor &&
-      board[y - 2][x - 2] === 2 / turnColor &&
-      board[y - 3][x - 3] === 2 / turnColor &&
-      board[y - 4][x - 4] === 2 / turnColor &&
-      board[y - 5][x - 5] === 2 / turnColor &&
-      board[y - 6][x - 6] === 2 / turnColor &&
-      board[y - 7][x - 7] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x - 1] = turnColor;
-      newBoard[y - 2][x - 2] = turnColor;
-      newBoard[y - 3][x - 3] = turnColor;
-      newBoard[y - 4][x - 4] = turnColor;
-      newBoard[y - 5][x - 5] = turnColor;
-      newBoard[y - 6][x - 6] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x + 1] === 2 / turnColor &&
-      board[y - 2][x + 2] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x + 1] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y][x] === 0 &&
-      board[y - 1][x + 1] === 2 / turnColor &&
-      board[y - 2][x + 2] === 2 / turnColor &&
-      board[y - 3][x + 3] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x + 1] = turnColor;
-      newBoard[y - 2][x + 2] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x + 1] === 2 / turnColor &&
-      board[y - 2][x + 2] === 2 / turnColor &&
-      board[y - 3][x + 3] === 2 / turnColor &&
-      board[y - 4][x + 4] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x + 1] = turnColor;
-      newBoard[y - 2][x + 2] = turnColor;
-      newBoard[y - 3][x + 3] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x + 1] === 2 / turnColor &&
-      board[y - 2][x + 2] === 2 / turnColor &&
-      board[y - 3][x + 3] === 2 / turnColor &&
-      board[y - 4][x + 4] === 2 / turnColor &&
-      board[y - 5][x + 5] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x + 1] = turnColor;
-      newBoard[y - 2][x + 2] = turnColor;
-      newBoard[y - 3][x + 3] = turnColor;
-      newBoard[y - 4][x + 4] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y - 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x + 1] === 2 / turnColor &&
-      board[y - 2][x + 2] === 2 / turnColor &&
-      board[y - 3][x + 3] === 2 / turnColor &&
-      board[y - 4][x + 4] === 2 / turnColor &&
-      board[y - 5][x + 5] === 2 / turnColor &&
-      board[y - 6][x + 6] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x + 1] = turnColor;
-      newBoard[y - 2][x + 2] = turnColor;
-      newBoard[y - 3][x + 3] = turnColor;
-      newBoard[y - 4][x + 4] = turnColor;
-      newBoard[y - 5][x + 5] = turnColor;
-    }
-
-    if (
-      board[y - 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y - 1][x + 1] === 2 / turnColor &&
-      board[y - 2][x + 2] === 2 / turnColor &&
-      board[y - 3][x + 3] === 2 / turnColor &&
-      board[y - 4][x + 4] === 2 / turnColor &&
-      board[y - 5][x + 5] === 2 / turnColor &&
-      board[y - 6][x + 6] === 2 / turnColor &&
-      board[y - 7][x + 7] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y - 1][x + 1] = turnColor;
-      newBoard[y - 2][x + 2] = turnColor;
-      newBoard[y - 3][x + 3] = turnColor;
-      newBoard[y - 4][x + 4] = turnColor;
-      newBoard[y - 5][x + 5] = turnColor;
-      newBoard[y - 6][x + 6] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x - 1] === 2 / turnColor &&
-      board[y + 2][x - 2] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x - 1] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x - 1] === 2 / turnColor &&
-      board[y + 2][x - 2] === 2 / turnColor &&
-      board[y + 3][x - 3] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x - 1] = turnColor;
-      newBoard[y + 2][x - 2] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x - 1] === 2 / turnColor &&
-      board[y + 2][x - 2] === 2 / turnColor &&
-      board[y + 3][x - 3] === 2 / turnColor &&
-      board[y + 4][x - 4] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x - 1] = turnColor;
-      newBoard[y + 2][x - 2] = turnColor;
-      newBoard[y + 3][x - 3] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x - 1] === 2 / turnColor &&
-      board[y + 2][x - 2] === 2 / turnColor &&
-      board[y + 3][x - 3] === 2 / turnColor &&
-      board[y + 4][x - 4] === 2 / turnColor &&
-      board[y + 5][x - 5] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x - 1] = turnColor;
-      newBoard[y + 2][x - 2] = turnColor;
-      newBoard[y + 3][x - 3] = turnColor;
-      newBoard[y + 4][x - 4] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x - 1] === 2 / turnColor &&
-      board[y + 2][x - 2] === 2 / turnColor &&
-      board[y + 3][x - 3] === 2 / turnColor &&
-      board[y + 4][x - 4] === 2 / turnColor &&
-      board[y + 5][x - 5] === 2 / turnColor &&
-      board[y + 6][x - 6] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x - 1] = turnColor;
-      newBoard[y + 2][x - 2] = turnColor;
-      newBoard[y + 3][x - 3] = turnColor;
-      newBoard[y + 4][x - 4] = turnColor;
-      newBoard[y + 5][x - 5] = turnColor;
-    }
-
-    if (
-      board[y + 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x - 1] === 2 / turnColor &&
-      board[y + 2][x - 2] === 2 / turnColor &&
-      board[y + 3][x - 3] === 2 / turnColor &&
-      board[y + 4][x - 4] === 2 / turnColor &&
-      board[y + 5][x - 5] === 2 / turnColor &&
-      board[y + 6][x - 6] === 2 / turnColor &&
-      board[y + 7][x - 7] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x - 1] = turnColor;
-      newBoard[y + 2][x - 2] = turnColor;
-      newBoard[y + 3][x - 3] = turnColor;
-      newBoard[y + 4][x - 4] = turnColor;
-      newBoard[y + 5][x - 5] = turnColor;
-      newBoard[y + 6][x - 6] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 2] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x + 1] === 2 / turnColor &&
-      board[y + 2][x + 2] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 3] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x + 1] === 2 / turnColor &&
-      board[y + 2][x + 2] === 2 / turnColor &&
-      board[y + 3][x + 3] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
-      newBoard[y + 2][x + 2] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 4] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x + 1] === 2 / turnColor &&
-      board[y + 2][x + 2] === 2 / turnColor &&
-      board[y + 3][x + 3] === 2 / turnColor &&
-      board[y + 4][x + 4] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
-      newBoard[y + 2][x + 2] = turnColor;
-      newBoard[y + 3][x + 3] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 5] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x + 1] === 2 / turnColor &&
-      board[y + 2][x + 2] === 2 / turnColor &&
-      board[y + 3][x + 3] === 2 / turnColor &&
-      board[y + 4][x + 4] === 2 / turnColor &&
-      board[y + 5][x + 5] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
-      newBoard[y + 2][x + 2] = turnColor;
-      newBoard[y + 3][x + 3] = turnColor;
-      newBoard[y + 4][x + 4] = turnColor;
-      setTurnColor(2 / turnColor);
-    }
-
-    if (
-      board[y + 6] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x + 1] === 2 / turnColor &&
-      board[y + 2][x + 2] === 2 / turnColor &&
-      board[y + 3][x + 3] === 2 / turnColor &&
-      board[y + 4][x + 4] === 2 / turnColor &&
-      board[y + 5][x + 5] === 2 / turnColor &&
-      board[y + 6][x + 6] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
-      newBoard[y + 2][x + 2] = turnColor;
-      newBoard[y + 3][x + 3] = turnColor;
-      newBoard[y + 4][x + 4] = turnColor;
-      newBoard[y + 5][x + 5] = turnColor;
-    }
-
-    if (
-      board[y + 7] !== undefined &&
-      board[y][x] === 0 &&
-      board[y + 1][x + 1] === 2 / turnColor &&
-      board[y + 2][x + 2] === 2 / turnColor &&
-      board[y + 3][x + 3] === 2 / turnColor &&
-      board[y + 4][x + 4] === 2 / turnColor &&
-      board[y + 5][x + 5] === 2 / turnColor &&
-      board[y + 6][x + 6] === 2 / turnColor &&
-      board[y + 7][x + 7] === turnColor
-    ) {
-      newBoard[y][x] = turnColor;
-      newBoard[y + 1][x + 1] = turnColor;
-      newBoard[y + 2][x + 2] = turnColor;
-      newBoard[y + 3][x + 3] = turnColor;
-      newBoard[y + 4][x + 4] = turnColor;
-      newBoard[y + 5][x + 5] = turnColor;
-      newBoard[y + 6][x + 6] = turnColor;
+        if (board[y + n][x + n] !== undefined && board[y + n][x + n] === turnColor) {
+          for (let k = 1; k < n; k++) {
+            newBoard[y + k][x + k] = turnColor;
+          }
+          newBoard[y][x] = turnColor;
+          setTurnColor(2 / turnColor);
+        }
+      }
     }
 
     setBoard(newBoard);
